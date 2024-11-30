@@ -1,0 +1,11 @@
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  /* padding:4px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  max-height: 400px;
+  overflow-y: scroll; */
+}

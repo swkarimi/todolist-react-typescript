@@ -1,0 +1,53 @@
+import { FormEvent, useEffect, useRef, useState } from "react"
+import { Modal } from "../Modal/Modal"
+import { taskType } from "../Task/Task"
+import styles from "./EditTask.module.css"
+
+type EditTaskProps = {
+  task: taskType
+  onClose: (v: boolean) => void
+  isEditModalOpen: boolean
+  onEditTask: (id: string, title: string) => void
+}
+
+export const EditTask = ({
+  task,
+  isEditModalOpen,
+  onClose,
+  onEditTask,
+}: EditTaskProps) => {
+  const [inputValue, setInputValue] = useState(task.title)
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    if (inputRef.current) inputRef.current.focus()
+  }, [])
+
+  const submitHandler = (e: FormEvent) => {
+    e.preventDefault()
+    if (inputValue.trim() === "") return
+    onEditTask(task.id, inputValue.trim())
+    onClose(false)
+  }
+
+  return (
+    <Modal isOpen={isEditModalOpen} onClose={() => onClose(false)}>
+      <form className={styles.form} onSubmit={submitHandler}>
+        <input
+          ref={inputRef}
+          type="text"
+          className={styles["input-task"]}
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <button
+          type="submit"
+          className={styles["submit-button"]}
+          disabled={!inputValue.trim()}
+        >
+          Submit
+        </button>
+      </form>
+    </Modal>
+  )
+}

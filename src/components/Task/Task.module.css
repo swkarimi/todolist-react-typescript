@@ -1,0 +1,40 @@
+.task{
+    border: 1px solid silver;
+    border-radius: 4px;
+    padding: 8px;
+
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title{
+    cursor: pointer;
+    user-select: none;
+    text-transform: capitalize;
+}
+
+.btn-action > .btn{
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-delete {
+    background-color: red;
+}
+
+.btn-edit {
+    background-color: blueviolet;
+    margin-right: 4px;
+}
+
+.done{
+    text-decoration: line-through;
+}

@@ -1,0 +1,34 @@
+.form{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-task{
+    width: 100%;
+    padding: .5rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid silver;
+}
+
+.input-task::placeholder{
+    color: gainsboro;
+}
+
+.submit-button{
+    background-color: skyblue;
+    color: white;
+    font-size: 12px;
+    padding: 4px 8px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.submit-button:disabled{
+    background-color: silver;
+}
