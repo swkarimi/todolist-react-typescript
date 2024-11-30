@@ -1,7 +1,7 @@
 import { FormEvent, useEffect, useRef, useState } from "react"
 import { Modal } from "../Modal/Modal"
-import { taskType } from "../Task/Task"
 import styles from "./EditTask.module.css"
+import { taskType } from "../../types/types"
 
 type EditTaskProps = {
   task: taskType

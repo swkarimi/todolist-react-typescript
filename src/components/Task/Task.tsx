@@ -1,12 +1,7 @@
 import { useState } from "react"
 import styles from "./Task.module.css"
 import { EditTask } from "../EditTask/EditTask"
-
-export type taskType = {
-  id: string
-  title: string
-  done: boolean
-}
+import { taskType } from "../../types/types"
 
 type TaskProps = {
   task: taskType
