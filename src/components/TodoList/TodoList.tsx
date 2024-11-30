@@ -1,18 +1,15 @@
-import { useEffect, useState } from "react"
 import styles from "./TodoList.module.css"
 import { LOCALSTORAGE_TASKS_KEY } from "../../utils/constant"
 import { TaskList } from "../TaskList/TaskList"
 import { InputTask } from "../InputTask/InputTask"
 import { TaskListType } from "../../types/types"
+import { useLocalStorage } from "../../hooks/useLocalStorage"
 
 export const TodoList = () => {
-  const [tasks, setTasks] = useState<TaskListType>(
-    JSON.parse(localStorage.getItem(LOCALSTORAGE_TASKS_KEY) || "[]")
+  const [tasks, setTasks] = useLocalStorage<TaskListType>(
+    LOCALSTORAGE_TASKS_KEY,
+    []
   )
-
-  useEffect(() => {
-    localStorage.setItem(LOCALSTORAGE_TASKS_KEY, JSON.stringify(tasks))
-  }, [tasks])
 
   const onRemove = (id: string) =>
     setTasks((prev) => prev.filter((task) => task.id !== id))
