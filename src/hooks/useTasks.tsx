@@ -1,5 +1,5 @@
+import { TaskListType } from "@/types/types"
 import { useLocalStorage } from "./useLocalStorage"
-import { TaskListType } from "../types/types"
 
 type UseTasksReturnType = {
   tasks: TaskListType

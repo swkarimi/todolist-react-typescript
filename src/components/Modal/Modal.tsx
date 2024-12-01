@@ -1,6 +1,6 @@
 import { FC, ReactNode, MouseEvent } from "react"
-import styles from "./Modal.module.css"
 import { createPortal } from "react-dom"
+import styles from "./Modal.module.css"
 
 type ModalProps = {
   isOpen: boolean

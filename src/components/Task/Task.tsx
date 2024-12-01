@@ -1,7 +1,7 @@
 import { useState } from "react"
+import { EditTask } from "@/components/EditTask/EditTask"
+import { taskType } from "@/types/types"
 import styles from "./Task.module.css"
-import { EditTask } from "../EditTask/EditTask"
-import { taskType } from "../../types/types"
 
 type TaskProps = {
   task: taskType

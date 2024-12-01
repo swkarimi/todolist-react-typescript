@@ -1,5 +1,5 @@
-import { TaskListType } from "../types/types"
 import { useEffect, useState } from "react"
+import { TaskListType } from "@/types/types"
 
 type UseFetchTasksType = {
   tasks: TaskListType

@@ -1,5 +1,5 @@
-import { TaskListType } from "../../types/types"
-import { Task } from "../Task/Task"
+import { TaskListType } from "@/types/types"
+import { Task } from "@/components/Task/Task"
 import styles from "./TaskList.module.css"
 
 type TaskListProps = {
