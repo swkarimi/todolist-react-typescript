@@ -9,7 +9,7 @@ type UseTaskReturnType = {
   onAdd: (title: string) => void
 }
 
-export function useTask(
+export function useTasks(
   key: string,
   initalValue: TaskListType
 ): UseTaskReturnType {

@@ -2,10 +2,10 @@ import styles from "./TodoList.module.css"
 import { LOCALSTORAGE_TASKS_KEY } from "../../utils/constant"
 import { TaskList } from "../TaskList/TaskList"
 import { InputTask } from "../InputTask/InputTask"
-import { useTask } from "../../hooks/useTask"
+import { useTasks } from "../../hooks/useTasks"
 
 export const TodoList = () => {
-  const { tasks, onAdd, onComplete, onEdit, onRemove } = useTask(
+  const { tasks, onAdd, onComplete, onEdit, onRemove } = useTasks(
     LOCALSTORAGE_TASKS_KEY,
     []
   )
