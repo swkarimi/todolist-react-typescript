@@ -13,6 +13,12 @@
     cursor: pointer;
     user-select: none;
     text-transform: capitalize;
+    word-break: break-all;
+    hyphens: auto;
+}
+
+.btn-action{
+    flex-shrink: 0;
 }
 
 .btn-action > .btn{
