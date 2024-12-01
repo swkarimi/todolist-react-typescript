@@ -1,7 +1,7 @@
 import { useLocalStorage } from "./useLocalStorage"
 import { TaskListType } from "../types/types"
 
-type UseTaskReturnType = {
+type UseTasksReturnType = {
   tasks: TaskListType
   onRemove: (id: string) => void
   onComplete: (id: string, done: boolean) => void
@@ -12,7 +12,7 @@ type UseTaskReturnType = {
 export function useTasks(
   key: string,
   initalValue: TaskListType
-): UseTaskReturnType {
+): UseTasksReturnType {
   const [tasks, setTasks] = useLocalStorage<TaskListType>(key, initalValue)
 
   const onRemove = (id: string) =>
