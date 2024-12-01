@@ -1,5 +1,6 @@
 import { FC, ReactNode, MouseEvent } from "react"
 import styles from "./Modal.module.css"
+import { createPortal } from "react-dom"
 
 type ModalProps = {
   isOpen: boolean
@@ -14,8 +15,8 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
       onClose()
     }
   }
-
-  return (
+  
+  return createPortal(
     <div className={styles["modal-overlay"]} onClick={clickOverlayHandler}>
       <div className={styles["modal-content"]}>
         <button className={styles["modal-close"]} onClick={onClose}>
@@ -23,6 +24,7 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
         </button>
         {children}
       </div>
-    </div>
+    </div>,
+    document.getElementById("modal-root")!
   )
 }
