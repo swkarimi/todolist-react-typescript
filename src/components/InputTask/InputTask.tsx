@@ -2,9 +2,9 @@ import { FormEvent, useEffect, useRef, useState } from "react"
 import styles from "./InputTask.module.css"
 
 export const InputTask = ({
-  onAddTask,
+  onAdd,
 }: {
-  onAddTask: (v: string) => void
+  onAdd: (title: string) => void
 }) => {
   const [inputValue, setInputValue] = useState<string>("")
   const inputRef = useRef<HTMLInputElement>(null)
@@ -16,7 +16,7 @@ export const InputTask = ({
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (inputValue.trim() === "") return
-    onAddTask(inputValue.trim())
+    onAdd(inputValue.trim())
     setInputValue("")
   }
 

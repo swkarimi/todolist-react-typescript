@@ -7,14 +7,14 @@ type EditTaskProps = {
   task: taskType
   onClose: (v: boolean) => void
   isEditModalOpen: boolean
-  onEditTask: (id: string, title: string) => void
+  onEdit: (id: string, title: string) => void
 }
 
 export const EditTask = ({
   task,
   isEditModalOpen,
   onClose,
-  onEditTask,
+  onEdit,
 }: EditTaskProps) => {
   const [inputValue, setInputValue] = useState(task.title)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -26,7 +26,7 @@ export const EditTask = ({
   const submitHandler = (e: FormEvent) => {
     e.preventDefault()
     if (inputValue.trim() === "") return
-    onEditTask(task.id, inputValue.trim())
+    onEdit(task.id, inputValue.trim())
     onClose(false)
   }
 

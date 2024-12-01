@@ -6,14 +6,14 @@ type TaskListProps = {
   taskList: TaskListType
   onRemove: (id: string) => void
   onComplete: (id: string, done:boolean) => void
-  onEditTask: (id: string, title:string) => void
+  onEdit: (id: string, title:string) => void
 }
 
-export const TaskList = ({ taskList, onRemove,onComplete, onEditTask }: TaskListProps) => {
+export const TaskList = ({ taskList, onRemove,onComplete, onEdit }: TaskListProps) => {
   return (
     <div className={styles["task-list"]}>
       {taskList.map((task) => (
-        <Task key={task.id} task={task} onRemove={onRemove} onComplete={onComplete} onEditTask={onEditTask} />
+        <Task key={task.id} task={task} onRemove={onRemove} onComplete={onComplete} onEdit={onEdit} />
       ))}
     </div>
   )

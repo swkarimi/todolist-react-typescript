@@ -5,8 +5,8 @@ type UseTaskReturnType = {
   tasks: TaskListType
   onRemove: (id: string) => void
   onComplete: (id: string, done: boolean) => void
-  onEditTask: (id: string, title: string) => void
-  addTask: (title: string) => void
+  onEdit: (id: string, title: string) => void
+  onAdd: (title: string) => void
 }
 
 export function useTask(
@@ -23,13 +23,13 @@ export function useTask(
       prev.map((task) => (task.id === id ? { ...task, done: !done } : task))
     )
 
-  const onEditTask = (id: string, title: string) => {
+  const onEdit = (id: string, title: string) => {
     setTasks((prev) =>
       prev.map((item) => (item.id === id ? { ...item, title } : item))
     )
   }
 
-  const addTask = (title: string) =>
+  const onAdd = (title: string) =>
     setTasks((prev) => [
       ...prev,
       { id: crypto.randomUUID().slice(0, 5), title, done: false },
@@ -39,7 +39,7 @@ export function useTask(
     tasks,
     onRemove,
     onComplete,
-    onEditTask,
-    addTask,
+    onEdit,
+    onAdd,
   }
 }

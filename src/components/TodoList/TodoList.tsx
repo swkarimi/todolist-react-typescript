@@ -5,7 +5,7 @@ import { InputTask } from "../InputTask/InputTask"
 import { useTask } from "../../hooks/useTask"
 
 export const TodoList = () => {
-  const { tasks, addTask, onComplete, onEditTask, onRemove } = useTask(
+  const { tasks, onAdd, onComplete, onEdit, onRemove } = useTask(
     LOCALSTORAGE_TASKS_KEY,
     []
   )
@@ -13,12 +13,12 @@ export const TodoList = () => {
   return (
     <div className={styles["todolist-container"]}>
       <h2>Todo List</h2>
-      <InputTask onAddTask={addTask} />
+      <InputTask onAdd={onAdd} />
       <TaskList
         taskList={tasks}
         onRemove={onRemove}
         onComplete={onComplete}
-        onEditTask={onEditTask}
+        onEdit={onEdit}
       />
     </div>
   )

@@ -7,10 +7,10 @@ type TaskProps = {
   task: taskType
   onRemove: (id: string) => void
   onComplete: (id: string, done: boolean) => void
-  onEditTask: (id: string, title: string) => void
+  onEdit: (id: string, title: string) => void
 }
 
-export const Task = ({ task, onRemove, onComplete, onEditTask }: TaskProps) => {
+export const Task = ({ task, onRemove, onComplete, onEdit }: TaskProps) => {
   const [isEditModalOpen, setEditModalOpen] = useState(false)
   return (
     <div className={styles.task}>
@@ -39,7 +39,7 @@ export const Task = ({ task, onRemove, onComplete, onEditTask }: TaskProps) => {
           task={task}
           isEditModalOpen={isEditModalOpen}
           onClose={setEditModalOpen}
-          onEditTask={onEditTask}
+          onEdit={onEdit}
         />
       )}
     </div>
